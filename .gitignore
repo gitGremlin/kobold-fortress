@@ -1,0 +1,7 @@
+node_modules/
+.idea/
+build/
+coverage/
+.env
+*.log
+yarn.lock
