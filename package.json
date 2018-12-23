@@ -1,0 +1,19 @@
+{
+  "name": "kobold-fortress",
+  "version": "1.0.0",
+  "description": "fortress game about the most adorable critters in the multiverse!",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitGremlin/kobold-fortress.git"
+  },
+  "keywords": [
+    "fortress",
+    "clicker",
+    "kobold",
+    "dragon"
+  ],
+  "author": "Mo Shawwa"
+}
