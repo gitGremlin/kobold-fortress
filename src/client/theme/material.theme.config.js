@@ -3,7 +3,7 @@
 export default {
   // Palette choice
   palette: {
-    type: 'dark'
+    type: 'dark',
   },
 
   // Material UI theme overrides
