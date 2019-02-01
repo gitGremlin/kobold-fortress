@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
 import { Table, TableHead, TableBody, TableRow, TableCell } from '@material-ui/core';
 
-import store from '../stores/Store';
+import Store from '../stores/Store';
 
-export default class TopBar extends Component {
+@observer
+export default class UnitTable extends Component {
 
   generateHeaders = () => {
     let headers = [];
-    store.table.getColumnHead().map(head => {
+    Store.table.getColumnHead().map(head => {
       headers.push(
         <TableCell>
           {head}
@@ -19,14 +21,26 @@ export default class TopBar extends Component {
 
   generatorRows = () => {
     let rowData = [];
-    store.table.getData().map(kobold => {
+    Store.table.getKoboldData().map(kobold => {
       rowData.push(
         <TableRow>
-          <TableCell>{kobold.name}</TableCell>
-          <TableCell>{kobold.age}</TableCell>
-          <TableCell>{kobold.occupation}</TableCell>
-          <TableCell>{kobold.health[0] + '/' + kobold.health[1]}</TableCell>
-          <TableCell>{kobold.assigned}</TableCell>
+          <TableCell>{kobold.name || "Nameless"}</TableCell>
+          <TableCell>{kobold.species || "Kobold"}</TableCell>
+          <TableCell>{kobold.age || "Unknown"}</TableCell>
+          <TableCell>
+            {!kobold.skills ?
+              "Unskilled"
+              :
+              kobold.skills.map(skill => {
+                return <div>
+                  {skill}
+                </div>
+              })
+            }
+          </TableCell>
+          <TableCell>{!kobold.health ? "Unknown" : kobold.health[0] + '/' + kobold.health[1]}</TableCell>
+          <TableCell>{kobold.status || "Fine"}</TableCell>
+          <TableCell>{kobold.assigned || "Unassigned"}</TableCell>
         </TableRow>
       )
     });

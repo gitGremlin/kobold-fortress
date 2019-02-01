@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import store from '../stores/Store';
+import Store from '../stores/Store';
 
 export default class TopBar extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class TopBar extends Component {
         <AppBar position="static" color="default">
           <Toolbar>
             <Typography variant="h5" color="inherit">
-              {store.page.topBar}
+              {Store.page.topBar}
             </Typography>
           </Toolbar>
         </AppBar>
