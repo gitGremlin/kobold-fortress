@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {AppBar, Toolbar, Typography} from '@material-ui/core';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import store from '../stores/Store';
 
 export default class TopBar extends Component {

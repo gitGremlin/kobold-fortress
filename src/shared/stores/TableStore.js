@@ -2,6 +2,7 @@ import { observable } from 'mobx';
 
 export default class TableStore {
 
+  @observable assigned = true;
   @observable columnHead = ["Name", "Age", "Occupation", "Health", "Assigned"];
   @observable data = [
     {
@@ -25,6 +26,10 @@ export default class TableStore {
 
   getData() {
     return this.data;
+  }
+
+  getAssigned() {
+    return this.assigned;
   }
 
 }
