@@ -1,5 +1,6 @@
 import { observable } from 'mobx';
 
+import Page from './PageStore';
 import Table from './TableStore';
 
 class Store {
@@ -10,10 +11,14 @@ class Store {
   reset() {
     console.log('Store is being reset to default settings...');
 
+    this.page = new Page;
     this.table = new Table;
 
     console.log('Store has been reset!');
   }
+  
+  // Page Control
+  @observable page;
 
   // Table Control
   @observable table;

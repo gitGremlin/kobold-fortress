@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {AppBar, Toolbar, Typography} from '@material-ui/core';
+import store from '../stores/Store';
 
 export default class TopBar extends Component {
   render() {
@@ -8,8 +9,7 @@ export default class TopBar extends Component {
         <AppBar position="static" color="default">
           <Toolbar>
             <Typography variant="h5" color="inherit">
-              {/* TODO: Store of text for page */}
-              Kobold Fortress
+              {store.page.topBar}
             </Typography>
           </Toolbar>
         </AppBar>
