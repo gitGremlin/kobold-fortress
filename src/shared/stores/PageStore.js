@@ -1,6 +1,6 @@
 import { observable } from 'mobx';
 
-export default class TableStore {
+export default class PageStore {
 
   @observable topBar = 'Kobold Fortress';
 

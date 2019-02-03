@@ -11,7 +11,7 @@ export default class TableStore {
       skills: ["Miner", "Warrior"],
       health: [3,5],
       status: null,
-      assignment: "Digging",
+      assignment: "Dig",
     },{
       name: "Octok",
       age: 50,
@@ -19,7 +19,7 @@ export default class TableStore {
       skills: ["Warrior", "Cook", "Bard", "Pro Blood Bowl"],
       health: [0,5],
       status: null,
-      assignment: "Cooking",
+      assignment: "Cook",
     },{
       name: "CRX",
       age: 63,
@@ -27,7 +27,7 @@ export default class TableStore {
       skills: ["Butcher", "Medic"],
       health: [0,2],
       status: "DEAD",
-      assignment: "-",
+      assignment: "None"
     },{
       name: "Red",
       age: 3,
@@ -35,7 +35,7 @@ export default class TableStore {
       skills: null,
       health: [1,2],
       status: null,
-      assignment: "Learning",
+      assignment: "Learn",
     },{
       name: "Old Kobold",
       age: 80,
@@ -43,7 +43,7 @@ export default class TableStore {
       skills: ["Library Use"],
       health: [3,3],
       status: null,
-      assignment: "Teaching",
+      assignment: "Teach",
     },
   ];
 

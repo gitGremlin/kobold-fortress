@@ -23,6 +23,7 @@ class TurnActions {
       }
     }
     Store.table.koboldData = newKoboldData;
+    Store.turn.count+=1;
   }
 
   checkDeath(newKobold) {

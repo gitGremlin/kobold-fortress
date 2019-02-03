@@ -7,38 +7,29 @@ import AssignmentActions from '../actions/AssignmentActions';
 export default class AssignmentSelect extends Component {
   constructor() {
     super();
-    this.state = {
-      currentAssignment: "None",
-    }
   }
 
   handleChange = (event) => {
-    this.setState({
-      currentAssignment: event.target.value
-    });
-    AssignmentActions.setAssignment(this.state.currentAssignment, this.props.koboldIndex)
-  }
-
-  componentWillMount() {
-    this.state.currentAssignment = this.props.assignment
+    AssignmentActions.setAssignment(event.target.value, this.props.koboldIndex)
   }
 
   render() {
     return (
       <div>
         <Select
-          value={this.state.currentAssignment}
+          value={this.props.assignment}
           onChange={this.handleChange}
         >
           {Store.assignment.list.map((job, index) => {
-            return (
-              <MenuItem
-                value={job}
-                key={index}
-              >
-                {job}
-              </MenuItem>
-          )
+            if(AssignmentActions.checkAssignment(job, this.props.koboldIndex)){
+              return (
+                <MenuItem
+                  value={job.title}
+                  key={index}
+                >
+                  {job.title}
+                </MenuItem>
+              )}
           })}
         </Select>
       </div>
