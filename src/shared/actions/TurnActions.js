@@ -1,6 +1,7 @@
 import { action } from 'mobx';
 
 import Store from '../stores/Store';
+import TableActions from './TableActions';
 
 class TurnActions {
 
@@ -26,7 +27,7 @@ class TurnActions {
 
   checkDeath(newKobold) {
     if(this.checkOldAge(newKobold.age, newKobold.species)) return this.applyDeath(newKobold);
-    // if(newKobold.health[0] == 0) return this.applyDeath(newKobold);
+    if(newKobold.health[0] == 0) return this.applyDeath(newKobold);
     return newKobold;
   }
 

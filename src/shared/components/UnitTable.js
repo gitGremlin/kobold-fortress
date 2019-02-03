@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import { Table, TableHead, TableBody, TableRow, TableCell } from '@material-ui/core';
 
 import Store from '../stores/Store';
+import AssignmentSelect from './AssignmentSelect';
 
 @observer
 export default class UnitTable extends Component {
@@ -21,7 +22,7 @@ export default class UnitTable extends Component {
 
   generatorRows = () => {
     let rowData = [];
-    Store.table.getKoboldData().map(kobold => {
+    Store.table.getKoboldData().map((kobold, index) => {
       rowData.push(
         <TableRow>
           <TableCell>{kobold.name || "Nameless"}</TableCell>
@@ -40,7 +41,11 @@ export default class UnitTable extends Component {
           </TableCell>
           <TableCell>{!kobold.health ? "Unknown" : kobold.health[0] + '/' + kobold.health[1]}</TableCell>
           <TableCell>{kobold.status || "Fine"}</TableCell>
-          <TableCell>{kobold.assigned || "Unassigned"}</TableCell>
+          <TableCell>
+            <AssignmentSelect
+              assignment={kobold.assignment}
+              koboldIndex={index}/>
+            </TableCell>
         </TableRow>
       )
     });

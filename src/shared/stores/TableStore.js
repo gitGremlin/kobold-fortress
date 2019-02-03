@@ -2,7 +2,7 @@ import { observable, computed } from 'mobx';
 
 export default class TableStore {
 
-  @observable columnHead = ["Name", "Species", "Age", "Skills", "Health", "Status", "Assigned"];
+  @observable columnHead = ["Name", "Species", "Age", "Skills", "Health", "Status", "Assignment"];
   @observable koboldData = [
     {
       name: "Kurtok",
@@ -11,15 +11,15 @@ export default class TableStore {
       skills: ["Miner", "Warrior"],
       health: [3,5],
       status: null,
-      assigned: "Digging",
+      assignment: "Digging",
     },{
       name: "Octok",
       age: 50,
       species: "Kobold",
       skills: ["Warrior", "Cook", "Bard", "Pro Blood Bowl"],
-      health: [3,5],
+      health: [0,5],
       status: null,
-      assigned: "Cooking",
+      assignment: "Cooking",
     },{
       name: "CRX",
       age: 63,
@@ -27,7 +27,7 @@ export default class TableStore {
       skills: ["Butcher", "Medic"],
       health: [0,2],
       status: "DEAD",
-      assigned: "-",
+      assignment: "-",
     },{
       name: "Red",
       age: 3,
@@ -35,7 +35,7 @@ export default class TableStore {
       skills: null,
       health: [1,2],
       status: null,
-      assigned: "Learning",
+      assignment: "Learning",
     },{
       name: "Old Kobold",
       age: 80,
@@ -43,7 +43,7 @@ export default class TableStore {
       skills: ["Library Use"],
       health: [3,3],
       status: null,
-      assigned: "Teaching",
+      assignment: "Teaching",
     },
   ];
 

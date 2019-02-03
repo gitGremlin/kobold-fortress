@@ -1,5 +1,6 @@
 import { observable } from 'mobx';
 
+import Assignment from './AssignmentStore';
 import Page from './PageStore';
 import Table from './TableStore';
 
@@ -11,6 +12,7 @@ class Store {
   reset() {
     console.log('Store is being reset to default settings...');
 
+    this.assignment = new Assignment;
     this.page = new Page;
     this.table = new Table;
 
@@ -22,6 +24,9 @@ class Store {
 
   // Table Control
   @observable table;
+
+  // Assignment Control
+  @observable assignment;
 
 }
 
